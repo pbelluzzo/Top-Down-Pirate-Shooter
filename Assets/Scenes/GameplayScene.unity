@@ -4604,8 +4604,10 @@ GameObject:
   m_Component:
   - component: {fileID: 523811557}
   - component: {fileID: 523811558}
-  - component: {fileID: 523811556}
   - component: {fileID: 523811559}
+  - component: {fileID: 523811556}
+  - component: {fileID: 523811560}
+  - component: {fileID: 523811561}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4680,6 +4682,32 @@ CapsuleCollider2D:
   m_Offset: {x: -0.009675294, y: -0.038701296}
   m_Size: {x: 0.41614735, y: 1.129004}
   m_Direction: 0
+--- !u!114 &523811560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523811555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b05f5ca362c524c957b22a43428f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
+--- !u!114 &523811561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523811555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b9b92196ef7b3439893cd19a826804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerCore: {fileID: 11400000, guid: 83db1d0e32fd3e14688e7829081ae8a3, type: 2}
 --- !u!1 &542978960
 GameObject:
   m_ObjectHideFlags: 0
@@ -6139,8 +6167,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1855971114}
-        m_MethodName: UpdateHealthBar
+      - m_Target: {fileID: 523811560}
+        m_MethodName: takeDamage
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
