@@ -8,8 +8,10 @@ public class Destructible : MonoBehaviour
     public bool isPlayer;
 
     public delegate void OnDamageTakeHandler(float value);
+    public delegate void OnDestroyHandler(Destructible destructible, bool isPlayer);
 
     public event OnDamageTakeHandler DamageTaken;
+    public event OnDestroyHandler OnBeingDestroyed;
     [SerializeField] private float healthPoints = 100;
 
     public void TakeDamage(float value)
@@ -28,6 +30,7 @@ public class Destructible : MonoBehaviour
     }
     public void Destroy()
     {
+        OnBeingDestroyed?.Invoke(this, isPlayer);
         Destroy(this.gameObject, 0.1f);
     }
 
