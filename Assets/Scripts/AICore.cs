@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Path.GUIFramework;
 //using Unity.Mathematics;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Ship Core/AI Core")]
 public class AICore : ShipCore
 {
-    public override void Initialize()
-    {
-    }
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float attackRange;
+    [SerializeField] private bool hasCannon;
+    [SerializeField] private bool inCooldown = false;
     public override void Act(ShipController controller)
     {
-        HandleMovement(controller); 
+        HandleMovement(controller);
     }
 
     private void HandleMovement(ShipController controller)
@@ -36,7 +38,8 @@ public class AICore : ShipCore
         }
         if (hit.distance <= 4f && hit.transform.gameObject.CompareTag("Player"))
         {
-           // Debug.Log("PLAYER ON SHOOT RANGE, ATTACK!");
+            // Debug.Log("PLAYER ON SHOOT RANGE, ATTACK!");
+            HandleAttack(controller);
             return;
         }
         if (hit.distance <= 1f && !hit.transform.gameObject.CompareTag("Player"))
@@ -60,4 +63,23 @@ public class AICore : ShipCore
         if (UnityEngine.Random.Range(0, 1) <= 0.5) return 1;
         return -1;
     }
+
+    private void HandleAttack(ShipController controller)
+    {
+        Debug.Log(inCooldown);
+        Debug.Log(hasCannon);
+        if (hasCannon && !inCooldown)
+        {
+            controller.OnFrontCannonShoot();
+            inCooldown = true;
+            controller.StartCoroutine(WaitForCooldown());
+        }
+    }
+
+    public override IEnumerator WaitForCooldown()
+    {
+        yield return new WaitForSeconds(attackCooldown);
+        inCooldown = false;
+    }
+
 }

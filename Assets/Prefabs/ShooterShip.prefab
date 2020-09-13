@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6482043593212230364}
   - component: {fileID: 6482043593212230352}
   - component: {fileID: 6482043593212230353}
+  - component: {fileID: 2716649769054915440}
   m_Layer: 2
   m_Name: ShooterShip
   m_TagString: Untagged
@@ -34,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 6482043595118714641}
   - {fileID: 6748468054015787344}
+  - {fileID: 6261366687619706577}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -115,6 +117,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerCore: {fileID: 11400000, guid: aa4a8af666673aa4ab7aeb2084e958a9, type: 2}
+--- !u!114 &2716649769054915440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6482043593212230363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e704aff9afa154183fbc68fcd42890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannonBall: {fileID: 8290755963813858489, guid: 6beb3a9623cf7c64496003d56e7a1aa8,
+    type: 3}
+  frontalCannon: {fileID: 6485633388060466871}
+  leftCannons: []
+  rightCannons: []
 --- !u!1 &6482043593621139775
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +373,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fill: {fileID: 6482043593621139775}
+--- !u!1 &6485633388060466871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6261366687619706577}
+  m_Layer: 0
+  m_Name: FrontallCanonPlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6261366687619706577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6485633388060466871}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.826, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6482043593212230365}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8668341197303146865
 GameObject:
   m_ObjectHideFlags: 0

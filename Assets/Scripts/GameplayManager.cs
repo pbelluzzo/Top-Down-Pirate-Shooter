@@ -32,7 +32,7 @@ public class GameplayManager : MonoBehaviour
     {
         while (true)
         {
-            GameObject randomEnemy = enemies[Random.Range(0, (enemies.Length - 1))];
+            GameObject randomEnemy = enemies[Random.Range(0, (enemies.Length))];
             Transform randomSpawnArea = enemySpawnAreas[Random.Range(0, (enemySpawnAreas.Length - 1))].transform;
             GameObject enemy = Instantiate(randomEnemy, randomSpawnArea.position, randomSpawnArea.rotation);
             enemy.AddComponent<EnemyInitializer>();

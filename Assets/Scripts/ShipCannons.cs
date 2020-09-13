@@ -9,6 +9,32 @@ public class ShipCannons : MonoBehaviour
     [SerializeField] private GameObject[] leftCannons;
     [SerializeField] private GameObject[] rightCannons;
 
+    private ShipController shipController;
+
+    private void Awake()
+    {
+        shipController = GetComponent<ShipController>();
+
+        shipController.FrontCannonShoot += ShipController_FrontCannonShoot;
+        shipController.ShootLeftCannons += ShipController_ShootLeftCannons;
+        shipController.ShootRightCannons += ShipController_ShootRightCannons;
+    }
+
+    private void ShipController_ShootRightCannons()
+    {
+        ShootRightCannons();
+    }
+
+    private void ShipController_ShootLeftCannons()
+    {
+        ShootLeftCannons();
+    }
+
+    private void ShipController_FrontCannonShoot()
+    {
+        ShootFrontalCannon();
+    }
+
     public void ShootFrontalCannon()
     {
         Instantiate(cannonBall, frontalCannon.transform.position, frontalCannon.transform.rotation);
@@ -27,21 +53,5 @@ public class ShipCannons : MonoBehaviour
             Instantiate(cannonBall, cannon.transform.position, cannon.transform.rotation);
         }
         
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ShootFrontalCannon();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ShootRightCannons();
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ShootLeftCannons();
-        }
     }
 }

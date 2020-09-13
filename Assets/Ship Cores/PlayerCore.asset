@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03635c4b87b8fb643b672cdab1658a1b, type: 3}
   m_Name: PlayerCore
   m_EditorClassIdentifier: 
+  attackCooldown: 1
+  attackRange: 0
+  hasCannon: 1
+  inCooldown: 0
