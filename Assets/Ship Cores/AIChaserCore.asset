@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4f4041c667df34f9b5a03f1f9ccda6, type: 3}
   m_Name: AIChaserCore
   m_EditorClassIdentifier: 
+  attackMode: 1
+  attackCooldown: 0
+  attackRange: 0.8

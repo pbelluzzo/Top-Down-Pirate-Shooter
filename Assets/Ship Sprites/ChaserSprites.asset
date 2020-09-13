@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2214320b99db75a48a239022ef8056a9, type: 3}
+  m_Name: ChaserSprites
+  m_EditorClassIdentifier: 
+  sails:
+  - {fileID: 21300000, guid: 46dd219e8656d3046ab6f818f0aa3032, type: 3}
+  - {fileID: 21300000, guid: 3a01273faaa18ba468587a8d15415b3f, type: 3}
+  - {fileID: 21300000, guid: de12260d5e1049a4798fcafb96abae4d, type: 3}
+  hulls:
+  - {fileID: 21300000, guid: 27d478fb0b5caa840b5f0e2e50389fbf, type: 3}
+  - {fileID: 21300000, guid: 3e8d1240763676d47ba4dd9e8feddc10, type: 3}
+  - {fileID: 21300000, guid: 8c1510e3a17958146ba528e9c299768d, type: 3}

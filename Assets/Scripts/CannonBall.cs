@@ -7,7 +7,9 @@ public class CannonBall : MonoBehaviour
 {
     [SerializeField] private float damage;
     [SerializeField] private float cannonBallSpeed;
+    [SerializeField] private GameObject explosionEffect;
     private Rigidbody2D ballRigidbody;
+    
 
     private void Awake()
     {
@@ -25,6 +27,8 @@ public class CannonBall : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        GameObject explosionFx = Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(explosionFx, 1f);
         Destroy(this.gameObject);
     }
 }

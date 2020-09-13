@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4f4041c667df34f9b5a03f1f9ccda6, type: 3}
   m_Name: AIShooterCore
   m_EditorClassIdentifier: 
+  attackMode: 0
   attackCooldown: 1
-  attackRange: 0
-  hasCannon: 1
+  attackRange: 4

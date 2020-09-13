@@ -102,6 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b05f5ca362c524c957b22a43428f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionFx: {fileID: 8052121989345216174, guid: cce193f189b1e0d42a84c3b1d00d2d49,
+    type: 3}
   isPlayer: 0
   healthPoints: 100
 --- !u!114 &6482043593212230353

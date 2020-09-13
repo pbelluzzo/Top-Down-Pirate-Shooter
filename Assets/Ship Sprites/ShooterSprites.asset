@@ -9,7 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03635c4b87b8fb643b672cdab1658a1b, type: 3}
-  m_Name: PlayerCore
+  m_Script: {fileID: 11500000, guid: 2214320b99db75a48a239022ef8056a9, type: 3}
+  m_Name: ShooterSprites
   m_EditorClassIdentifier: 
-  attackCooldown: 1
+  sails:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hulls:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

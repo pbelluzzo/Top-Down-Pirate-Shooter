@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8714230277934506097}
   - component: {fileID: 8714230277934506109}
   - component: {fileID: 8714230277934506108}
+  - component: {fileID: -1235643989381070940}
   m_Layer: 2
   m_Name: ChaserShip
   m_TagString: Untagged
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ac3182a0a451b429b0a84b3e07de6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeed: 3
   rotationSpeed: 80
 --- !u!114 &8714230277934506109
 MonoBehaviour:
@@ -183,6 +184,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayer: 0
   healthPoints: 100
+  healthThreshold1: 0
+  healthThreshold2: 0
+  healthThreshold3: 0
 --- !u!114 &8714230277934506108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +200,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerCore: {fileID: 11400000, guid: 2c74c87a1f0fcfd40b08410631b817b8, type: 2}
+--- !u!114 &-1235643989381070940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8714230277934506102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba4a32390618db449d3a4e31414a994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionRange: 2
+  explosionDamage: 60
 --- !u!1 &8714230278070856594
 GameObject:
   m_ObjectHideFlags: 0
