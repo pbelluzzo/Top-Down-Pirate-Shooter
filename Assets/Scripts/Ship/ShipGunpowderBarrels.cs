@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ShipGunpowderBarrels : MonoBehaviour
 {
-    private Destructible destructible;
+    private ShipController shipController;
 
     [SerializeField] private float explosionRange;
     [SerializeField] private float explosionDamage;
 
     private void Awake()
     {
-        destructible = GetComponent<Destructible>();
-        destructible.OnBeingDestroyed += Destructible_OnBeingDestroyed;
+        shipController = GetComponent<ShipController>();
+        shipController.BeingDestroyed += ShipController_OnBeingDestroyed;
     }
 
-    private void Destructible_OnBeingDestroyed(Destructible destructible, bool isPlayer)
+    private void ShipController_OnBeingDestroyed(ShipController controller, bool isPlayer)
     {
-        destructible.OnBeingDestroyed -= Destructible_OnBeingDestroyed;
+        shipController.BeingDestroyed -= ShipController_OnBeingDestroyed;
         DamageNearbyShips();
     }
 

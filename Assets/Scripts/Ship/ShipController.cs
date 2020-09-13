@@ -9,9 +9,11 @@ public class ShipController : MonoBehaviour
     public delegate void OnFrontalCannonShoot();
     public delegate void OnLeftCannonsShoot();
     public delegate void OnRightCannonsShoot();
-    public delegate void OnTakeDamageHandler();
+    public delegate void OnTakeDamageHandler(float value);
     public delegate void OnHealthThresholdChangedHandler(int threshold);
+    public delegate void OnDestroyHandler(ShipController controller, bool isPlayer);
 
+    public event OnDestroyHandler BeingDestroyed;
     public event OnMoveEmittedHandler MoveEmitted;
     public event OnRotateEmittedHandler RotateEmitted;
     public event OnFrontalCannonShoot FrontCannonShoot;
@@ -51,12 +53,25 @@ public class ShipController : MonoBehaviour
     {
         ShootRightCannons?.Invoke();
     }
-    public void OnDamageTaken()
+    public void OnDamageTaken(float value = 0)
     {
-        DamageTaken?.Invoke();
+        DamageTaken?.Invoke(value);
     }
     public void OnHealthThresholdChanged(int threshold)
     {
         HealthThresholdChanged?.Invoke(threshold);
+    }
+    public void OnBeingDestroyed(bool isPlayer)
+    {
+        BeingDestroyed?.Invoke(this, isPlayer);
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("CannonBall"))
+        {
+            Debug.Log("collision cannon ball");
+            float damageValue = collision.gameObject.GetComponent<CannonBall>().GetDamage();
+            OnDamageTaken(damageValue);
+        }
     }
 }

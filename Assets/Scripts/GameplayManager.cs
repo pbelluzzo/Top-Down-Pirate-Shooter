@@ -24,8 +24,8 @@ public class GameplayManager : MonoBehaviour
     private void SpawnPlayerShip()
     {
         player = Instantiate(playerShip);
-        Destructible destructible = player.GetComponent<Destructible>();
-        destructible.OnBeingDestroyed += Destructible_OnBeingDestroyed;
+        ShipController shipController = player.GetComponent<ShipController>();
+        shipController.BeingDestroyed += ShipController_OnBeingDestroyed;
     }
 
     private IEnumerator EnemySpawn()
@@ -36,8 +36,8 @@ public class GameplayManager : MonoBehaviour
             Transform randomSpawnArea = enemySpawnAreas[Random.Range(0, (enemySpawnAreas.Length - 1))].transform;
             GameObject enemy = Instantiate(randomEnemy, randomSpawnArea.position, randomSpawnArea.rotation);
             enemy.AddComponent<EnemyInitializer>();
-            Destructible destructible = enemy.GetComponent<Destructible>();
-            destructible.OnBeingDestroyed += Destructible_OnBeingDestroyed;
+            ShipController shipController = enemy.GetComponent<ShipController>();
+            shipController.BeingDestroyed += ShipController_OnBeingDestroyed;
             yield return new WaitForSeconds(PlayerPrefs.GetFloat("EnemyRespawnTime"));
         }
     }
@@ -49,9 +49,9 @@ public class GameplayManager : MonoBehaviour
         GameOver();
     }
 
-    private void Destructible_OnBeingDestroyed(Destructible destructible, bool isPlayer)
+    private void ShipController_OnBeingDestroyed(ShipController controller, bool isPlayer)
     {
-        destructible.OnBeingDestroyed -= Destructible_OnBeingDestroyed;
+        controller.BeingDestroyed -= ShipController_OnBeingDestroyed;
         if (!isPlayer)
         {
             score++;

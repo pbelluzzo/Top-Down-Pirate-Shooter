@@ -16,6 +16,13 @@ public class ShipVisualsManager : MonoBehaviour
     private void Awake()
     {
         shipController.HealthThresholdChanged += ShipController_HealthThresholdChanged;
+        shipController.BeingDestroyed += ShipController_BeingDestroyed;
+    }
+
+    private void ShipController_BeingDestroyed(ShipController controller, bool isPlayer)
+    {
+        GameObject explosionFx = Instantiate(destructionEffect, transform.position, transform.rotation);
+        Destroy(explosionFx, 1f);
     }
 
     private void ShipController_HealthThresholdChanged(int threshold)

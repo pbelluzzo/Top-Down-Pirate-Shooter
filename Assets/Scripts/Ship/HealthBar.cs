@@ -5,15 +5,15 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private GameObject fill;
-    private Destructible destructibleObject;
+    private ShipController shipController;
 
     private void Awake()
     {
-        destructibleObject = GetComponentInParent<Destructible>();
-        destructibleObject.DamageTaken += DestructibleObject_OnDamageTaken;
+        shipController = GetComponentInParent<ShipController>();
+        shipController.DamageTaken += ShipController_OnDamageTaken;
     }
 
-    private void DestructibleObject_OnDamageTaken(float value)
+    private void ShipController_OnDamageTaken(float value)
     {
         UpdateHealthBar(value);
     }
