@@ -12,6 +12,11 @@ public class ShipController : MonoBehaviour
 
     [SerializeField] private ShipCore controllerCore;
 
+    private void Update()
+    {
+        controllerCore.Act(this);
+    }
+
     public void OnMoveEmitted()
     {
         MoveEmitted?.Invoke();
@@ -20,8 +25,6 @@ public class ShipController : MonoBehaviour
     {
         RotateEmitted?.Invoke(directionMultiplier);
     }
-    private void Update()
-    {
-        controllerCore.Act(this);
-    }
+
+
 }

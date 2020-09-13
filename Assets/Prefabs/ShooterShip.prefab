@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6482043593212230364}
   - component: {fileID: 6482043593212230352}
   - component: {fileID: 6482043593212230353}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShooterShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,8 +50,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 5
+  m_AngularDrag: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b05f5ca362c524c957b22a43428f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   healthPoints: 100
 --- !u!114 &6482043593212230353
 MonoBehaviour:
@@ -123,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6482043593621139760}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BarFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6482043594666415031}
   - component: {fileID: 6482043594666415016}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6482043594998024399}
   - component: {fileID: 6482043594998024384}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6482043595118714641}
   - component: {fileID: 6482043595118714642}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6748468054015787344}
   - component: {fileID: 2947757705143129742}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

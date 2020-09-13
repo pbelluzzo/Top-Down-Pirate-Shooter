@@ -6,6 +6,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Ship Core/Player Core")]
 public class PlayerCore : ShipCore
 {
+    public override void Initialize()
+    {
+        throw new NotImplementedException();
+    }
     public override void Act(ShipController controller)
     {
         CheckMoveInput(controller); 
