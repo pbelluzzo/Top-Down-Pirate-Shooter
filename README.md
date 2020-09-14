@@ -9,3 +9,5 @@
  <b>Q, E</b> to fire side cannons;
  
  Space to fire front cannon;
+
+Credits for all the graphic assets : https://www.kenney.nl/
