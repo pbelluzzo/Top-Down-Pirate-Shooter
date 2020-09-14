@@ -4,10 +4,12 @@
  
  Currently, the game is structured to work in the editor only.
  
- Standard Inputs Are: <b>W, A, D</b> for movement;
+ In order to play the game in its current stage, use 16x9 aspect ration on the game view.
  
- <b>Q, E</b> to fire side cannons;
+ Standard Inputs Are: <b>W, A, D</b> for movement.
  
- Space to fire front cannon;
+ <b>Q, E</b> to fire side cannons.
+ 
+ Space to fire front cannon.
 
 Credits for all the graphic assets : https://www.kenney.nl/
