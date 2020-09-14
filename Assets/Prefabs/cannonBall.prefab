@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8290755963813858491}
   - component: {fileID: 8290755963813858488}
   - component: {fileID: 1256012061100615627}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cannonBall
   m_TagString: CannonBall
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  cannonBallSpeed: 14
+  cannonBallSpeed: 24
   explosionEffect: {fileID: 8728990929040467311, guid: acd2f40c2db95ff4a86b365074f947d7,
     type: 3}
 --- !u!50 &1256012061100615627
@@ -128,9 +128,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_Mass: 0.01
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0

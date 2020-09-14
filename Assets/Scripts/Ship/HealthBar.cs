@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateHealthBar(float value)
     {
-        Vector3 newTransform = new Vector3(value /100, fill.transform.localScale.y);
+        Vector3 newTransform = new Vector3((fill.transform.localScale.x - value /100), fill.transform.localScale.y);
         if (newTransform.x < 0) newTransform.x = 0;
         fill.transform.localScale = newTransform;
     }

@@ -23,14 +23,13 @@ public class ShipGunpowderBarrels : MonoBehaviour
 
     private void DamageNearbyShips()
     {
-        Collider[] ships = Physics.OverlapSphere(transform.position, explosionRange);
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, explosionRange);
 
         foreach(Collider2D enemy in enemies)
         {
-            if (enemy.gameObject.GetComponent<Destructible>() != null)
+            if (enemy.gameObject.GetComponent<ShipController>() != null)
             {
-                enemy.gameObject.GetComponent<Destructible>().TakeDamage(explosionDamage);
+                enemy.gameObject.GetComponent<ShipController>().OnDamageTaken(explosionDamage);
             }
         }
     }

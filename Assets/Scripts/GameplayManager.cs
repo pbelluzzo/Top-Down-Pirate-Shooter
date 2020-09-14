@@ -62,6 +62,8 @@ public class GameplayManager : MonoBehaviour
     
     private void GameOver()
     {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies) Destroy(enemy);
         StopCoroutine(SessionTimeControl());
         StopCoroutine(EnemySpawn());
         gameOverMenu.SetActive(true);
